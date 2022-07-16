@@ -1,0 +1,8 @@
+@use "src/variables" as vars;
+.Items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: vars.$default-distance*2;
+  text-align: center;
+  padding: vars.$default-distance*2;
+}

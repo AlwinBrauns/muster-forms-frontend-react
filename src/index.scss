@@ -1,0 +1,72 @@
+@use "src/variables" as vars;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
+:root {
+  --my-primary-hue: 180;
+  --my-accent-hue: 190;
+  --my-warning-hue: 0;
+}
+
+body, html{
+  width: 100%;
+  background-color: hsla(var(--my-primary-hue), 50%, 95%, 100%);
+}
+
+*{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: hsla(var(--my-primary-hue), 50%, 10%, 100%);
+  outline-color: hsla(var(--my-accent-hue), 20%, 30%, 100%);
+}
+
+p,a,span,input {
+  font-size: 1rem;
+}
+
+a{
+  text-decoration: none;
+  transition: color 300ms ease-in-out;
+  &:hover {
+    color: hsla(var(--my-primary-hue), 50%, 50%, 100%);
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  text-transform: uppercase;
+  //em = relative to fontsize
+  letter-spacing: 0.2em;
+  color: hsla(var(--my-primary-hue), 50%, 30%, 100%);
+
+}
+
+input{
+  padding: vars.$default-distance*2;
+  border-radius: vars.$default-distance*2;
+  border:none;
+  background-color: hsla(var(--my-accent-hue), 50%, 70%, 100%);
+  transition: box-shadow 400ms ease-in-out,
+  color 300ms ease-in-out,
+  background-color 300ms ease-in-out,
+  outline 100ms ease-in-out;
+  &[type="button"], &[type="submit"]{
+    &:hover{
+      background-color: hsla(var(--my-accent-hue), 20%, 30%, 100%);
+      color: hsla(var(--my-primary-hue), 50%, 90%, 100%);
+      cursor: pointer;
+      box-shadow: 0px 5px 0px hsla(var(--my-accent-hue), 20%, 50%, 100%),
+      0px 10px 0px hsla(var(--my-accent-hue), 20%, 80%, 100%);
+    }
+    &:disabled{
+      background-color: hsla(var(--my-accent-hue), 10%, 70%, 100%);
+      &:hover {
+        box-shadow: none;
+        color: inherit;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+li{
+  list-style: none;
+}
